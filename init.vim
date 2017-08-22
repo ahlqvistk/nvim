@@ -2,7 +2,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'w0rp/ale' "Lint engine
-Plug 'jiangmiao/auto-pairs' "Automatic pair for brackets, quotes etc
 Plug 'ctrlpvim/ctrlp.vim' "Fuzzy finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Autocomplete
 Plug 'Shougo/neosnippet.vim' "Snippet plugin
@@ -26,6 +25,9 @@ set hlsearch
 set tabstop=2
 set shiftwidth=2
 set expandtab
+
+autocmd Filetype php setlocal ts=4 sw=4 expandtab
+autocmd Filetype python setlocal ts=4 sw=4 expandtab
 
 "Disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -61,5 +63,6 @@ let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 "File shortcuts
 nmap <leader>i :e ~/.config/nvim/init.vim<CR>
+nmap <leader>h :e ~/.config/nvim/snippets/html.snippets<CR>
 nmap <leader>j :e ~/.config/nvim/snippets/javascript.snippets<CR>
 nmap <leader>t :e ~/.config/tmux/.tmux.conf<CR>
