@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'w0rp/ale' "Lint engine
 Plug 'ctrlpvim/ctrlp.vim' "Fuzzy finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Autocomplete
+Plug 'junegunn/goyo.vim' "Distraction-free writing
 Plug 'Shougo/neosnippet.vim' "Snippets
 Plug 'tpope/vim-repeat' "Maps '.' so plugins can use it
 Plug 'tpope/vim-surround' "Surrounding shortcuts
@@ -33,12 +34,13 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-autocmd Filetype php setlocal ts=4 sw=4 expandtab
-autocmd Filetype python setlocal ts=4 sw=4 expandtab
+autocmd FileType php setlocal ts=4 sw=4 expandtab
+autocmd FileType python setlocal ts=4 sw=4 expandtab
+autocmd FileType make set noexpandtab
 
 "Set text width for gqq line breaks
-set tw=79
-set fo+=t
+set wrap
+set linebreak
 
 "Disable auto commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -54,8 +56,8 @@ set ruler
 syntax on
 
 "Hidden characters
-:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-:set list
+set listchars=eol:↵,tab:➝\ ,trail:·,extends:›,precedes:‹,nbsp:⎵,conceal:%
+set list
 
 "Change how VIM saves files for Webpack to watch
 set backupcopy=yes
@@ -88,3 +90,6 @@ nmap <leader>i :e ~/.config/nvim/init.vim<CR>
 nmap <leader>j :e ~/.config/nvim/snippets/javascript.snippets<CR>
 nmap <leader>p :e ~/.config/nvim/snippets/python.snippets<CR>
 nmap <leader>t :e ~/.config/tmux/.tmux.conf<CR>
+
+"Shortcuts
+nmap <c-i> :Goyo<CR>
