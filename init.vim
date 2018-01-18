@@ -57,7 +57,7 @@ syntax on
 
 "Hidden characters
 set listchars=eol:↵,tab:➝\ ,trail:·,extends:›,precedes:‹,nbsp:⎵,conceal:%
-set list
+"set list
 
 "Change how VIM saves files for Webpack to watch
 set backupcopy=yes
