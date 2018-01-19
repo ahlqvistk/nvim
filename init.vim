@@ -85,10 +85,7 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 "File shortcuts
-nmap <leader>h :e ~/.config/nvim/snippets/html.snippets<CR>
 nmap <leader>i :e ~/.config/nvim/init.vim<CR>
-nmap <leader>j :e ~/.config/nvim/snippets/javascript.snippets<CR>
-nmap <leader>p :e ~/.config/nvim/snippets/python.snippets<CR>
 nmap <leader>t :e ~/.config/tmux/.tmux.conf<CR>
 
 "Shortcuts
