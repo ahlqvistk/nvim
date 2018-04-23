@@ -4,7 +4,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'w0rp/ale' "Lint engine
 Plug 'ctrlpvim/ctrlp.vim' "Fuzzy finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Autocomplete
-Plug 'junegunn/goyo.vim' "Distraction-free writing
 Plug 'Shougo/neosnippet.vim' "Snippets
 Plug 'tpope/vim-repeat' "Maps '.' so plugins can use it
 Plug 'tpope/vim-surround' "Surrounding shortcuts
@@ -12,7 +11,6 @@ Plug 'christoomey/vim-tmux-navigator' "Seamless vim-tmux navigation
 
 ""Syntax plugins
 Plug 'hdima/python-syntax' "Enhanced Python highlighting
-Plug '2072/PHP-Indenting-for-VIm' "PHP syntax and indentation
 Plug 'pangloss/vim-javascript' "JavaScript syntax and indentation
 Plug 'mxw/vim-jsx' "JSX syntax and indentation
 
@@ -34,7 +32,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-autocmd FileType php setlocal ts=4 sw=4 expandtab
 autocmd FileType python setlocal ts=4 sw=4 expandtab
 autocmd FileType make set noexpandtab
 
@@ -87,6 +84,3 @@ let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 "File shortcuts
 nmap <leader>i :e ~/.config/nvim/init.vim<CR>
 nmap <leader>t :e ~/.config/tmux/.tmux.conf<CR>
-
-"Shortcuts
-nmap <c-i> :Goyo<CR>
