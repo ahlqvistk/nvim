@@ -4,7 +4,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'w0rp/ale' "Lint engine
 Plug 'ctrlpvim/ctrlp.vim' "Fuzzy finder
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } "Autocomplete
-Plug 'Shougo/neosnippet.vim' "Snippets
 Plug 'tpope/vim-repeat' "Maps '.' so plugins can use it
 Plug 'tpope/vim-surround' "Surrounding shortcuts
 Plug 'christoomey/vim-tmux-navigator' "Seamless vim-tmux navigation
@@ -35,7 +34,7 @@ set expandtab
 autocmd FileType python setlocal ts=4 sw=4 expandtab
 autocmd FileType make set noexpandtab
 
-"Set text width for gqq line breaks
+"gqq line breaks
 set wrap
 set linebreak
 
@@ -71,15 +70,7 @@ let g:jsx_ext_required = 0
 "Deoplete
 let g:deoplete#enable_at_startup = 1 
 let g:deoplete#enable_smart_case = 1 
-
-"Neosnippet
-imap <expr><TAB>
-  \ neosnippet#expandable_or_jumpable() ?
-  \ "\<Plug>(neosnippet_expand_or_jump)" :
-  \ pumvisible() ? "\<C-n>" : "\<TAB>"
-let g:neosnippet#disable_runtime_snippets = {'_' : 1}
-let g:neosnippet#enable_snipmate_compatibility = 1
-let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "File shortcuts
 nmap <leader>i :e ~/.config/nvim/init.vim<CR>
