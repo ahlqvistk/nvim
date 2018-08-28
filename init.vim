@@ -15,10 +15,12 @@ Plug 'mxw/vim-jsx' "JSX syntax and indentation
 
 call plug#end()
 
+let g:python3_host_prog = '/usr/bin/python'
+
 "Move around panes with hjkl
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
+nnoremap <BS> <c-w>h
 nnoremap <c-l> <c-w>l
 
 "Search Settings
